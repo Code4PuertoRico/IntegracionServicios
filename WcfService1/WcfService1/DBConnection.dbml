@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="IntegracionDeServicios" Class="DBConnectionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=USER5-PC\SQLEXPRESS;Initial Catalog=IntegracionDeServicios;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="IntegracionDeServiciosConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Beneficiario" Member="Beneficiarios">
+    <Type Name="Beneficiario">
+      <Column Name="id_Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SSN1" Type="System.String" DbType="NChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="SSN2" Type="System.String" DbType="NChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="SSN3" Type="System.String" DbType="NChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SegundoNombre" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ApellidoPaterno" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ApellidoMaterno" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="FechaDeNac" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Sexo" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="MunicipioResidencia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Beneficiario_Serv_Benef" Member="Serv_Benefs" ThisKey="id_Key" OtherKey="id_key" Type="Serv_Benef" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Serv_Benef" Member="Serv_Benefs">
+    <Type Name="Serv_Benef">
+      <Column Name="Id_Serv" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_key" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FechaServ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Beneficiario_Serv_Benef" Member="Beneficiario" ThisKey="id_key" OtherKey="id_Key" Type="Beneficiario" IsForeignKey="true" />
+      <Association Name="Servicio_Serv_Benef" Member="Servicio" ThisKey="Id_Serv" OtherKey="Id_Serv" Type="Servicio" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Servicio" Member="Servicios">
+    <Type Name="Servicio">
+      <Column Name="Id_Serv" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Servicio" Member="Servicio1" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="CodServ" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Servicio_Serv_Benef" Member="Serv_Benefs" ThisKey="Id_Serv" OtherKey="Id_Serv" Type="Serv_Benef" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DBConnection">
+  <DataContextMoniker Name="/DBConnectionDataContext" />
+  <nestedChildShapes>
+    <classShape Id="db84f6d9-64d5-4d67-835b-3017fc2b4179" absoluteBounds="5, 0.875, 2, 3.1170068359375">
+      <DataClassMoniker Name="/DBConnectionDataContext/Beneficiario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7aa84ef8-205f-4555-8fb4-fd9a6152e6d2" absoluteBounds="5.015, 1.335, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="db055d01-c50e-41b4-818b-2c80849038f8" absoluteBounds="0.875, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DBConnectionDataContext/Serv_Benef" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c24e20d3-ba56-4ce1-ade9-6fe6d0dd0751" absoluteBounds="0.89, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5 : 1.60179768880208); (2.875 : 1.60179768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBConnectionDataContext/Beneficiario/Beneficiario_Serv_Benef" />
+      <nodes>
+        <classShapeMoniker Id="db84f6d9-64d5-4d67-835b-3017fc2b4179" />
+        <classShapeMoniker Id="db055d01-c50e-41b4-818b-2c80849038f8" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0f67a457-d707-4ff4-b3eb-a2bacceca5eb" absoluteBounds="1, 3.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DBConnectionDataContext/Servicio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ff8633ce-b747-429a-888f-fb331cd43d65" absoluteBounds="1.0150000000000001, 3.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.9375 : 3.25); (1.9375 : 2.32859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBConnectionDataContext/Servicio/Servicio_Serv_Benef" />
+      <nodes>
+        <classShapeMoniker Id="0f67a457-d707-4ff4-b3eb-a2bacceca5eb" />
+        <classShapeMoniker Id="db055d01-c50e-41b4-818b-2c80849038f8" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
